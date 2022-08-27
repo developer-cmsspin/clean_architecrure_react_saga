@@ -1,22 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import ResponseHome from '../../../domain/home/model/responseHome';
+import HomeState from '../../../domain/home/state/homeState';
+
+
 
 export const homeSlice = createSlice({
     name: "home",
+    /*
     initialState: {
         data: new ResponseHome(),
         loading: false
     },
+     */
+    initialState: HomeState.initialState,
     reducers: {
         homePageBegin: (state) => { 
             state.loading = true;
         },
-        homePageSuccess: (state, response) => {
+        homePageSuccess: (state, response:PayloadAction<ResponseHome>) => {
             state.data = response.payload;
             state.loading = false;
         },
         homePageErr: (state, ex) => { 
-            state.data = new ResponseHome(); 
             state.loading = false;
             console.log(ex); 
         },

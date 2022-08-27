@@ -1,9 +1,17 @@
 import ResponseHome from '../model/responseHome';
-export default class HomeState{
+export default class HomeState {
 
-    public constructor(){
-        this.home = new ResponseHome();
+    public constructor() {
+        this.data = new ResponseHome();
+        this.loading = false;
     }
 
-    public home: ResponseHome;
+    public data: ResponseHome;
+    public loading: boolean;
+
+
+    public static initialState = {
+        data: new ResponseHome(),
+        loading: false
+    }
 }

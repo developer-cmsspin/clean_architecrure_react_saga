@@ -8,12 +8,12 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
     "@types/node": "^16.11.54",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "axios": "^0.27.2",
     "core-js": "^3.24.1",
+    "moq.ts": "^9.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
@@ -53,8 +53,11 @@
     ]
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.4.0",
+    "@types/jest": "^28.1.8",
     "@types/redux-logger": "^3.0.9",
     "@types/styled-components": "^5.1.26",
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "ts-jest": "^28.0.8"
   }
 }

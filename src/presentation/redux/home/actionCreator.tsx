@@ -4,6 +4,7 @@ import RequestHome from "../../../domain/home/model/requestHome";
 import IHomeApplication from '../../../domain/interface/application/iHomeApplication';
 import { call, put, takeLatest } from "redux-saga/effects"
 import { homePageSuccess, homePageErr } from "./reducers";
+import "reflect-metadata"
 
 function* homePage(): any {
     try {

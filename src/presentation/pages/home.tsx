@@ -20,10 +20,11 @@ const Home: React.FC = () => {
     }, [dispatch]);
 
 
-    console.log(data);
+    //console.log(data);
 
     return (
         <>
+        <div>{loading?"true":false}</div>
             {
                 loading
                     ?
@@ -32,9 +33,10 @@ const Home: React.FC = () => {
                     </div>
                     :
                     <div>
+                        <div>list items</div>
                        {
                          data.cards.map((_element:Card) =>(
-                            <div>{_element.name}</div>
+                            <div>Name:{_element.name}</div>
                          ))
                        }
                        <div>

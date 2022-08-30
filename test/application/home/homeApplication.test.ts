@@ -1,4 +1,5 @@
 import { Mock } from "moq.ts";
+import "reflect-metadata";
 import { container } from "tsyringe";
 import { IHomeInfrastructure } from '../../../src/domain/interface/infrastructure/iHomeInfrastructure';
 import DependencyInjectionDomain from '../../../src/domain/dependencyInjectionDomain';
@@ -9,11 +10,6 @@ import ResponseHome from "../../../src/domain/home/model/responseHome";
 import FakeCard from "../../extend/fakerCard";
 import HomeApplication from "../../../src/application/home/homeApplication";
 
-
-//Jest test
-const mockInfrastructure = jest.mock<IHomeInfrastructure>(
-    "../src/domain/interface/infrastructure/iHomeInfrastructure"
-);
 
 describe("application home", () => {
     test("application home gethome", async () => {
@@ -28,15 +24,15 @@ describe("application home", () => {
         response.count = 2;
         response.cards = [FakeCard.CreateCard(), FakeCard.CreateCard()]
 
-        const infrastructure = new Mock<IHomeInfrastructure>()
+        
+        const infrastructureMock = new Mock<IHomeInfrastructure>()
             .setup((instance) => instance.getHomeServer(request))
-            .returns(Promise.resolve(response))
-            .object();
+            .returns(Promise.resolve(response));
 
 
         //DI
         container.register<IHomeInfrastructure>("IHomeInfrastructure", {
-            useValue: infrastructure,
+            useValue: infrastructureMock.object(),
         });
 
         let application: HomeApplication = new HomeApplication();

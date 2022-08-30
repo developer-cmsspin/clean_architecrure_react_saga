@@ -11,7 +11,7 @@ export default class HomeInfrastructure implements IHomeInfrastructure {
         const responseServer = await axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=Magician");
         const cards = responseServer.data;
 
-        await this.delay(5000);
+        await this.delay(3000);
 
         const response: Array<Card> = [];
         for (const cardItem of cards.data) {

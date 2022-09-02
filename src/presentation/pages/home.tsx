@@ -10,11 +10,11 @@ import "reflect-metadata"
 
 const Home: React.FC = () => {
     const dispatch = useDispatch();
-    const data = useSelector<IState,ResponseHome>(state => state.home.data);
+    const data = useSelector<IState, ResponseHome>(state => state.home.data);
     const loading = useSelector<IState, boolean>(state => state.home.loading);
 
     useEffect(() => {
-        if(data.count === 0){
+        if (data.count === 0) {
             dispatch(homePageBegin());
         }
     }, [dispatch]);
@@ -24,24 +24,41 @@ const Home: React.FC = () => {
 
     return (
         <>
-        <div>{loading?"true":false}</div>
+            <div>{loading ? "true" : false}</div>
             {
                 loading
                     ?
                     <div>
-                        <img alt="loading" src={logo} />
+                        <img id="logo" alt="loading" src={logo} />
                     </div>
                     :
                     <div>
-                        <div>list items</div>
-                       {
-                         data.cards.map((_element:Card) =>(
-                            <div>Name:{_element.name}</div>
-                         ))
-                       }
-                       <div>
-                        {data.count}
-                       </div>
+                        {
+                            data?.cards == undefined
+                                ?
+                                <div>NO DATA</div>
+                                :
+                                <>
+                                    <div>list items</div>
+                                    <>
+                                        {
+                                            data.cards.map((_element: Card) => (
+                                                <div>Name:{_element.name}</div>
+                                            ))
+                                        }
+                                    </>
+                                </>
+                        }
+                        {
+                            data?.cards != undefined
+                                ?
+                                <div>
+                                    {data.count}
+                                </div>
+                                :
+                                <></>
+                        }
+
                     </div>
             }
         </>

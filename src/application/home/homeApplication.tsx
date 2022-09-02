@@ -21,6 +21,12 @@ export default class HomeApplication implements IHomeApplication {
     }
 
     public getHome(request: requestHome): Promise<ResponseHome>  {
-        return this._infrastructure.getHomeServer(request);
+        try {
+            return this._infrastructure.getHomeServer(request);    
+        } catch (ex:any) {
+            let errorResponse = new ResponseHome();
+            errorResponse.error  = ex.message;
+            return Promise.resolve(errorResponse);
+        }
     }
 }

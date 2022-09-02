@@ -22,7 +22,7 @@ export default class HomeInfrastructure implements IHomeInfrastructure {
             response.push(item);
         }
 
-        return { count: response.length, cards: response };
+        return { count: response.length, cards: response, error:"" };
     }
 
     private delay(ms: number) {

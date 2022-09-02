@@ -40,4 +40,34 @@ describe("application home", () => {
 
         expect(responseApplication).toBe(response);
     });
+    
+
+    test("application home gethome error not connecto to service", async () => {
+        DependencyInjectionDomain.DependencyInjectionStartup();
+        DependencyInjectionApplication.DependencyInjectionStartup();
+        DependencyInjectionInfrastructure.DependencyInjectionStartup();
+
+        let request = new RequestHome();
+        request.customer = "";
+
+        let response = new ResponseHome();
+        response.count = 2;
+        response.cards = [FakeCard.CreateCard(), FakeCard.CreateCard()]
+
+        
+        const infrastructureMock = new Mock<IHomeInfrastructure>()
+            .setup((instance) => instance.getHomeServer(request))
+            .throws(new Error("not connect to service"));
+
+
+        //DI
+        container.register<IHomeInfrastructure>("IHomeInfrastructure", {
+            useValue: infrastructureMock.object(),
+        });
+
+        let application: HomeApplication = new HomeApplication();
+        let responseApplication = await application.getHome(request);
+
+        expect(responseApplication.error).not.toBeNull();
+    });
 });

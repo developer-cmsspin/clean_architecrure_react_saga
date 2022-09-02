@@ -6,13 +6,7 @@ import HomeState from '../../../domain/home/state/homeState';
 
 export const homeSlice = createSlice({
     name: "home",
-    /*
-    initialState: {
-        data: new ResponseHome(),
-        loading: false
-    },
-     */
-    initialState: HomeState.initialState,
+    initialState: HomeState,
     reducers: {
         homePageBegin: (state) => { 
             state.loading = true;

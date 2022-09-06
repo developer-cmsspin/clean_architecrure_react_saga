@@ -1,5 +1,5 @@
 import React ,{FC} from "react";
-import { StyledLoader } from "./style";
+import { StyledLoader } from "./preloader.style";
 
 const Preloader: FC = () => {
     return (

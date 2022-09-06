@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { store } from './presentation/redux/store';
+import { store } from './infrastructure/redux/store';
 import "reflect-metadata";
 
 const container = document.getElementById('root')!;

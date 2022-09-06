@@ -1,8 +1,8 @@
-import RequestHome from '../../domain/home/model/requestHome';
-import ResponseHome from '../../domain/home/model/responseHome';
-import { IHomeInfrastructure } from '../../domain/interface/infrastructure/iHomeInfrastructure';
+import RequestHome from '../../../domain/home/model/requestHome';
+import ResponseHome from '../../../domain/home/model/responseHome';
+import { IHomeInfrastructure } from '../../../domain/interface/infrastructure/iHomeInfrastructure';
 import axios from 'axios';
-import Card from '../../domain/home/model/card';
+import Card from '../../../domain/home/model/card';
 
 export default class HomeInfrastructure implements IHomeInfrastructure {
     public async getHomeServer(request: RequestHome): Promise<ResponseHome> {

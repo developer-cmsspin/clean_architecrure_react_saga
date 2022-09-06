@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
-import Preloader from "./presentation/components/preloader";
-import RouteApp from "./presentation/routers/routes";
+import { Preloader } from "./presentation/home/components/preloader/index";
 import "reflect-metadata";
 import DependencyInjectionDomain from './domain/dependencyInjectionDomain';
 import { DependencyInjectionInfrastructure } from './infrastructure/dependencyInjectionInfrastructure';
 import { DependencyInjectionApplication } from './application/dependencyInjectionApplication';
+import RoutesApp from "./presentation/routers";
 
 
 const App: React.FC = () => {
@@ -17,7 +17,7 @@ const App: React.FC = () => {
     <>
       <BrowserRouter>
         <Suspense fallback={<Preloader />}>
-          <RouteApp />
+          <RoutesApp />
         </Suspense>
       </BrowserRouter>
     </>

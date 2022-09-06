@@ -2,17 +2,20 @@ import React from "react";
 import '@testing-library/jest-dom';
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { store } from '../../../src/presentation/redux/store';
 import { MemoryRouter } from "react-router-dom";
-import Layout from '../../../src/presentation/layouts/index';
-import Home from '../../../src/presentation/pages/home';
+import Layout from '../../../src/presentation/commons/layouts/index';
 import DependencyInjectionDomain from '../../../src/domain/dependencyInjectionDomain';
 import { DependencyInjectionInfrastructure } from '../../../src/infrastructure/dependencyInjectionInfrastructure';
 import { DependencyInjectionApplication } from '../../../src/application/dependencyInjectionApplication';
 import { IHomeInfrastructure } from '../../../src/domain/interface/infrastructure/iHomeInfrastructure';
 import { Mock } from 'moq.ts';
+import Home from '../../../src/presentation/home/pages/home';
 import RequestHome from '../../../src/domain/home/model/requestHome';
+import "reflect-metadata";
 import { container } from 'tsyringe';
+import { store } from '../../../src/infrastructure/redux/store';
+
+
 
 
 describe("presentation home", () => {
@@ -38,6 +41,7 @@ describe("presentation home", () => {
     expect(screen.getByText(/list items/i)).toBeInTheDocument();
   });
 });
+
 
 describe("presentation home errors", () => {
   test("renders learn react link error api", async () => {

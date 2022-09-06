@@ -1,5 +1,6 @@
+import "reflect-metadata";
 import { container } from "tsyringe";
-import HomeInfrastructure from './home/homeInfrastructure';
+import HomeInfrastructure from './external/home/homeInfrastructure';
 
 
 /**

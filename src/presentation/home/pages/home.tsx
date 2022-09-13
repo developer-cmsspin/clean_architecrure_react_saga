@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../../../domain/home/model/card";
 import ResponseHome from "../../../domain/home/model/responseHome";
-import { homePageBegin } from "../../../infrastructure/redux/home/reducers";
+import { homePageBegin } from "../../redux/home/reducers";
 import logo from ".././../commons/static/image/loading.gif";
 import IState from '../../../domain/interface/presentation/IState';
 import "reflect-metadata"

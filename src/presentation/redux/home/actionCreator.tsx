@@ -10,7 +10,7 @@ function* homePage(): any {
         const homeApplication = container.resolve<IHomeApplication>(
             "IHomeApplication"
         );
-        let response = yield call(() => homeApplication.getHome(new RequestHome()));
+        let response = yield call(() => homeApplication.handler(new RequestHome()));
         yield put(homePageSuccess(response));
     } catch (ex) {
         yield put(homePageErr(ex));

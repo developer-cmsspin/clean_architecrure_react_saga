@@ -3,7 +3,8 @@ import DependencyInjectionDomain from '../../../src/domain/dependencyInjectionDo
 import { DependencyInjectionApplication } from '../../../src/application/dependencyInjectionApplication';
 import { DependencyInjectionInfrastructure } from '../../../src/infrastructure/dependencyInjectionInfrastructure';
 import RequestHome from "../../../src/domain/home/model/requestHome";
-import HomeInfrastructure from '../../../src/infrastructure/home/homeInfrastructure';
+import HomeInfrastructure from '../../../src/infrastructure/external/home/homeInfrastructure';
+
 
 
 describe("infrastructure home", () => {

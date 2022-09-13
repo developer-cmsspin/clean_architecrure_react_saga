@@ -20,7 +20,7 @@ export default class HomeApplication implements IHomeApplication {
         //this._infrastructure = infrastructure;
     }
 
-    public getHome(request: requestHome): Promise<ResponseHome>  {
+    public handler(request: requestHome): Promise<ResponseHome>  {
         try {
             return this._infrastructure.getHomeServer(request);    
         } catch (ex:any) {

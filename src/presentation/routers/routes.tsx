@@ -2,10 +2,9 @@ import React from "react";
 import {
     Route, Routes,
 } from "react-router-dom";
-import Layout from "../../commons/layouts";
-import Home from '../pages/home';
-
-const HomeRoute: React.FC = () => {
+import Layout from "../layouts";
+import Home from "../pages/home/home";
+const routeApp: React.FC = () => {
     return (
         <Routes>
             <Route path="/" element={<Layout><Home /></Layout>} ></Route>
@@ -13,4 +12,4 @@ const HomeRoute: React.FC = () => {
     );
 }
 
-export default HomeRoute;
+export default routeApp;

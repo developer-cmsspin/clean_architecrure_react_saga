@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Card from "../../../domain/home/model/card";
 import ResponseHome from "../../../domain/home/model/responseHome";
 import { homePageBegin } from "../../redux/home/reducers";
-import logo from ".././../commons/static/image/loading.gif";
+import logo from "../static/image/loading.gif";
 import IState from '../../../domain/interface/presentation/IState';
 import "reflect-metadata"
 
@@ -20,6 +20,8 @@ const Home: React.FC = () => {
     }, [dispatch]);
 
 
+    //console.log(data);
+
     return (
         <>
             <div>{loading ? "true" : false}</div>
@@ -32,20 +34,30 @@ const Home: React.FC = () => {
                     :
                     <div>
                         {
-                            <>
-                                <div>list items</div>
-
-                                {
-                                    data.cards.map((_element: Card) => (
-                                        <div>Name:{_element.name}</div>
-                                    ))
-                                }
-
-                            </>
+                            data?.cards == undefined
+                                ?
+                                <div>NO DATA</div>
+                                :
+                                <>
+                                    <div>list items</div>
+                                    <>
+                                        {
+                                            data.cards.map((_element: Card) => (
+                                                <div>Name:{_element.name}</div>
+                                            ))
+                                        }
+                                    </>
+                                </>
                         }
-                        <div>
-                            {data.count}
-                        </div>
+                        {
+                            data?.cards != undefined
+                                ?
+                                <div>
+                                    {data.count}
+                                </div>
+                                :
+                                <></>
+                        }
 
                     </div>
             }

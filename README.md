@@ -73,7 +73,8 @@ Para mantener el orden dentro del dominio se usara una carpeta por cada uno de l
   
  - dtos: Normalmente se requiere consumir servicios de API o Web Socket para eso se usara esta carpeta, se debe colocar en esta los request y los response necesarios para el trabajo requerido con los servicios externos.
   
- - dependencyInjectionDomain.tsx: es este archivo se agregar todas la inyecciones de dependencia que tiene la capa domain si no se requiere se debe mantener por estructura de la solución.
+#### dependencyInjectionDomain.tsx: 
+En este archivo se agregar todas la inyecciones de dependencia que tiene la capa domain si no se requiere se debe mantener por estructura de la solución.
 
 
 ### Application:
@@ -107,7 +108,8 @@ Para mejorar la organización se usaran carpetas con el nombre del modulo, estas
   
 - Commons: toda la logica comun que aplique para el modulo deberia ir en esta carpeta. Se debe evaluar si vale la pena pasar la logica en esta parte ya que muchas veces todo se vuelve comun y la logica se vuelve compleja 
 
-- dependencyInjectionApplication.tsx: es este archivo se agregar todas la inyecciones de dependencia que tiene la capa application si no se requiere se debe mantener por estructura de la solución.
+#### dependencyInjectionApplication.tsx
+En este archivo se agregar todas la inyecciones de dependencia que tiene la capa application si no se requiere se debe mantener por estructura de la solución.
 
 ### Infrastructure:
 Siempre que se quiera usar acceso a información externa ya sea una base de datos, servicios REST o culaquier tipo de repositorio se debe hacer en esta capa. Vale la pena resaltar que solo debe hacer la conexion no debe tener logica de negocio y mucho menos integración directa con application. Tambien todas la clases deberian tener asociada una interface de domain si son consumidas desde application.
@@ -141,3 +143,47 @@ Para conexiones a base de datos o storage local debe trabajarse en esta carpeta,
 
 ### Presentation:
 Esta capa esta realizada con ReactJS y Redux Saga, Lo que se busca con esta capa es centralzar todo lo conserniente a visualización. Esta capa no debe tener logica y debe ser manejada en su totalidad por Redux.
+
+```
+ presentation/
+    |
+    |___ components/
+    |       |
+    |       |____ [Component Name]/
+    |                   |
+    |                   |____ index.ts
+    |                   |____ style.ts
+    |____ layout/
+    |        |
+    |        |____ index.ts
+    |        |____ style.ts
+    |
+    |___ pages/
+    |       |
+    |       |____ [Module Page]/
+    |                   |
+    |                   |____ index.ts
+    |                   |____ style.ts
+    |___ redux/
+    |       |
+    |       |____ [Module Page]/
+    |       |           |
+    |       |           |____ actionCreator.ts
+    |       |           |____ reducers.ts
+    |       |
+    |       |____ rootReducers.ts
+    |       |
+    |       |____ rootSagas.ts
+    |       |
+    |       |____ store.ts
+    |      
+    |____ routers/
+    |        |
+    |        |____ routes.ts
+    |
+    |____ static/
+            |
+            |____ images/
+```
+
+#### Components:

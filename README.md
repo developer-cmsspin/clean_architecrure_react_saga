@@ -231,3 +231,36 @@ Esta carpeta contiene todas las rutas a las cuales se podrá acceder, ser recomi
 #### Static:
 Todas las imágenes y demás archivos estáticos llamados por react deberán ir en esta carpeta.
 
+
+### Test
+Es esta capa de colocaran todas las pruebas unitarias la idea es que el equipo si se requiere pueda usar TDD. En dado caso que no se use se debe crear todas las pruebas requeridas por capa, incluida presentación.
+
+![Test](doc/testing.png "Test")
+```
+  test
+    |
+    |___ application /
+    |
+    |___ extend /
+    |
+    |___ infrastructure /
+    |
+    |___ mocks /
+    |
+    |___ presentation /
+```
+
+#### Application: 
+En esta carpeta tendremos todas las pruebas de application, vale resaltar que solo se debe probar esta capa
+
+#### Extend:
+En esta carpeta se deben colocar todos los fakers y clases que ayuden a generar objetos para las pruebas 
+
+#### Infrastructure:
+Aqui deben ir todas las pruebas para las conexiones externas. Vale la pena resaltar que estas pruebas no deben incluir los llamados reales a los sevicios. Si solo es el llamado al servicio se debe usar inyección de dependencias u omitir esta prueba.
+
+#### Mocks
+Aqui se debe usar toda la configuracion requerida para el manejo de la libreria de mocks
+
+#### Presentation
+Todas las pruebas a la interface se deben manejar desde este punto, recordar que las pruebas se deben hacer por componente, pagina y demas partes de esta capa no crear una gran prueba con todos los componentes o con diferentes rutas

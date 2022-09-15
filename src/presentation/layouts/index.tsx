@@ -1,12 +1,12 @@
-import React from "react";
-import { ContentSite } from "./style";
+import React from 'react'
+import { ContentSite } from './style'
 
 interface IProps {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
-const Layout = (props: IProps) => {
-    return (
+const Layout = (props: IProps):JSX.Element => {
+  return (
         <>
             <div>
                 <ContentSite>
@@ -18,8 +18,7 @@ const Layout = (props: IProps) => {
             </div>
 
         </>
-    );
-};
+  )
+}
 
-
-export default Layout;
+export default Layout

@@ -1,3 +1,3 @@
-export default class RequestHome{
-    public customer:string = "";
+export default class RequestHome {
+  public customer: string = ''
 }

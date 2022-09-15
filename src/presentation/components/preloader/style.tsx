@@ -1,4 +1,4 @@
-import Styled from 'styled-components';
+import Styled from 'styled-components'
 
 export const StyledLoader = Styled.div`
     width: 100%;
@@ -9,4 +9,4 @@ export const StyledLoader = Styled.div`
     align-items: center;
     position: fixed;
     z-index: 99;
-`;
+`

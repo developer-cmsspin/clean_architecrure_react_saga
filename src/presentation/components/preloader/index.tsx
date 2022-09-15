@@ -1,12 +1,12 @@
-import React ,{FC} from "react";
-import { StyledLoader } from "./style";
+import React, { FC } from 'react'
+import { StyledLoader } from './style'
 
 const Preloader: FC = () => {
-    return (
+  return (
         <StyledLoader>
             loading......
         </StyledLoader>
-    );
-};
+  )
+}
 
-export default Preloader;
+export default Preloader

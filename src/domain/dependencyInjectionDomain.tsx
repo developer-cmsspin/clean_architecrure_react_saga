@@ -1,6 +1,3 @@
-export default class DependencyInjectionDomain {
-    /**
-    * @static DependencyInjectionDomain
-    */
-    public static DependencyInjectionStartup(): void { }
+export const DependencyInjectionDomain = (): void => {
 }
+export default DependencyInjectionDomain

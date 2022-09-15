@@ -1,3 +1,3 @@
-export class ResponseHomeDto{
-    
+export class ResponseHomeDto {
+
 }

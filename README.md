@@ -154,6 +154,14 @@ Esta capa esta realizada con ReactJS y Redux Saga, Lo que se busca con esta capa
 ```
  presentation/
     |
+    |___ commons/
+    |       |
+    |       |____ [Group Commons Name]/
+    |
+    |___ hooks/
+    |       |
+    |       |____ [Group Hooks Name]/
+    |
     |___ components/
     |       |
     |       |____ [Component Name]/
@@ -202,6 +210,11 @@ Esta capa esta realizada con ReactJS y Redux Saga, Lo que se busca con esta capa
             |
             |____ images/
 ```
+#### commons:
+Para manejar todos lo utilitarios se debe usar la carpeta commons, esta puede tener internamente tener archivos .ts o carpetas agrupando funcionalidades.
+
+#### hooks:
+Si lo que se quiere es tener utilitarios para react se debe usar la carpeta hooks y como se ve con los commons se puede internamente agrupar en carpetas o manejar archivos individuales.
 
 #### Components:
 En esta carpeta se colocará todos los componentes genéricos que se repiten en varias páginas, si solo aplica para una página este no se debe pasar a esta carpeta. Todos los componentes deben estar en carpetas donde se debe separar los estilos de la interface
